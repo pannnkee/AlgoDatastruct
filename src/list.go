@@ -104,12 +104,12 @@ func GetData(head *ListNode, index int) (data Element) {
 }
 
 func (head *ListNode) PrintList() {
-	point := head
+	point := head.Next
 	if point == nil {
 		fmt.Println("List is nil, return!")
 		return
 	}
-	for point.Next != nil {
+	for point != nil {
 		fmt.Print(fmt.Sprintf(" %d ",point.Data))
 		point = point.Next
 	}
@@ -131,24 +131,24 @@ func ListInstance()  {
 		fmt.Println("Head is nil, return.")
 	}
 
-	for i := 1; i < 10; i++ {
+	for i := 0; i < 6; i++ {
 		TailAdd(Head, Element(i))
 	}
 	Head.PrintList()
 
-	HeadAdd(Head,1000)
-	HeadAdd(Head,2000)
-	HeadAdd(Head,3000)
-	Head.PrintList()
-
-	Delete(Head,2)
-	Head.PrintList()
-
-	Insert(Head,2, 101)
-	Head.PrintList()
-
-	Search(Head,101)
-	GetData(Head,4)
+	//HeadAdd(Head,1000)
+	//HeadAdd(Head,2000)
+	//HeadAdd(Head,3000)
+	//Head.PrintList()
+	//
+	//Delete(Head,2)
+	//Head.PrintList()
+	//
+	//Insert(Head,2, 101)
+	//Head.PrintList()
+	//
+	//Search(Head,101)
+	//GetData(Head,4)
 
 }
 
