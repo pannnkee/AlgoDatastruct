@@ -103,6 +103,7 @@ func GetData(head *ListNode, index int) (data Element) {
 	return
 }
 
+//遍历打印
 func (head *ListNode) PrintList() {
 	point := head.Next
 	if point == nil {
@@ -116,6 +117,7 @@ func (head *ListNode) PrintList() {
 	fmt.Println()
 }
 
+//获取链表长度
 func GetListLength(head *ListNode) (length int) {
 	point := head
 	for point.Next != nil {

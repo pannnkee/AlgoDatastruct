@@ -1,13 +1,9 @@
 package main
 
-import (
-	"DataStructureGolang/src"
-	"sync"
-)
+import "DataStructureGolang/src"
 
 func main() {
 	//src.ListInstance()
-	src.DListNodeInstance()
-	mutex := sync.RWMutex{}
-	mutex.Lock()
+	//src.DListNodeInstance()
+	src.ItemStackInstance()
 }

@@ -22,6 +22,7 @@ func newDList() *DList {
 func (this *DList) Length() int  {
 	return this.Size
 }
+
 func newDListNode(data Element) *DNode {
 	return &DNode{Data: data}
 }
