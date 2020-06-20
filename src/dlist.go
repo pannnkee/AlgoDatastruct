@@ -11,19 +11,16 @@ type DNode struct {
 type DList struct {
 	Head *DNode
 	Tail *DNode
+	Size  int
 }
 
+//初始化链表
 func newDList() *DList {
-	return &DList{Head: nil, Tail: nil}
+	return &DList{Head: nil, Tail: nil, Size: 0}
 }
 
-func (this *DList) Length() (count int) {
-	head := this.Head
-	if head != nil {
-		count++
-		head = head.Next
-	}
-	return
+func (this *DList) Length() int  {
+	return this.Size
 }
 func newDListNode(data Element) *DNode {
 	return &DNode{Data: data}
@@ -36,11 +33,14 @@ func (this *DList) DListHeadAdd(data Element) {
 	if this.Length() == 0 {
 		this.Head = node
 		this.Tail = node
+		node.Prev = nil
+		node.Next = nil
 	} else {
 		node.Next = this.Head
 		this.Head.Prev = node
 		this.Head = node
 	}
+	this.Size++
 }
 
 //尾插法
@@ -49,12 +49,15 @@ func (this *DList) DListTailAdd(data Element) {
 	if this.Length() == 0 {
 		this.Tail = node
 		this.Head = node
+		node.Prev = nil
+		node.Next = nil
 	} else {
-
 		node.Prev = this.Tail
+		node.Next = nil
 		this.Tail.Next = node
 		this.Tail = node
 	}
+	this.Size++
 }
 
 //任意位置插入
@@ -67,6 +70,10 @@ func (this *DList) InsertAnyWhere(index int, data Element) {
 	if this.Length() == 0 {
 		this.Head = node
 		this.Tail = node
+		node.Prev = nil
+		node.Next = nil
+		this.Size++
+		return
 	}
 	if index == 0 {
 		this.DListHeadAdd(data)
@@ -86,8 +93,24 @@ func (this *DList) InsertAnyWhere(index int, data Element) {
 
 	node.Prev = head
 	head.Next.Prev = node
+	this.Size++
 }
 
+//任意位置删除
+func (this *DList) DeleteAnywhere(index int) {
+	if index > this.Size {
+		fmt.Println("index error, please check again.")
+		return
+	}
+
+	p := this.Head
+	for i := 0; i < index - 1; i++ {
+		p = p.Next
+	}
+	p.Next = p.Next.Next
+	p.Next.Next.Prev = p
+	this.Size--
+}
 func (this *DList) PrintDList() {
 	head := this.Head
 	for head != nil {
@@ -104,12 +127,20 @@ func DListNodeInstance() {
 		DList.DListTailAdd(Element(i))
 	}
 	DList.PrintDList()
+	fmt.Println("size:", DList.Size)
 
-	DList.InsertAnyWhere(2,100)
+	DList.InsertAnyWhere(1,100)
 	DList.PrintDList()
 
-	DList.InsertAnyWhere(0,50)
+	DList.InsertAnyWhere(2,500)
 	DList.PrintDList()
-	DList.InsertAnyWhere(3,60)
+
+	DList.InsertAnyWhere(4,600)
+	DList.PrintDList()
+
+	DList.DeleteAnywhere(3)
+	DList.PrintDList()
+
+	DList.DeleteAnywhere(3)
 	DList.PrintDList()
 }
