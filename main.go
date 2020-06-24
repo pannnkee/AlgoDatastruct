@@ -1,9 +1,12 @@
 package main
 
-import "DataStructureGolang/src"
+import (
+	"DataStructureGolang/src/stack"
+)
 
 func main() {
 	//src.ListInstance()
 	//src.DListNodeInstance()
-	src.ItemStackInstance()
+	//stack.ItemStackInterface()
+	stack.ListStackInstance()
 }

@@ -1,6 +1,8 @@
-package src
+package list
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type DNode struct {
 	Data Element
