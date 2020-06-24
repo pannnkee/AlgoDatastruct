@@ -1,12 +1,11 @@
 package main
 
-import (
-	"DataStructureGolang/src/stack"
-)
+import "DataStructureGolang/src/queue"
 
 func main() {
 	//src.ListInstance()
 	//src.DListNodeInstance()
 	//stack.ItemStackInterface()
-	stack.ListStackInstance()
+	//stack.ListStackInstance()
+	queue.InstanceQueue()
 }
