@@ -8,5 +8,6 @@ func main() {
 	//stack.ItemStackInterface()
 	//stack.ListStackInstance()
 	//queue.InstanceQueue()
-	tree.BinaryTreeNodeInstance()
+	//tree.BinaryTreeNodeInstance()
+	tree.BinarySearchTreeInstance()
 }
