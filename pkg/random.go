@@ -18,7 +18,7 @@ func GenerateRandomNumber(start int, end int, count int) []int {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for len(nums) < count {
 		//生成随机数
-		num := r.Intn((end - start)) + start
+		num := r.Intn(end - start) + start
 
 		//查重
 		exist := false
@@ -33,6 +33,5 @@ func GenerateRandomNumber(start int, end int, count int) []int {
 			nums = append(nums, num)
 		}
 	}
-
 	return nums
 }

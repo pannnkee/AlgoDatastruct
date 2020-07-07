@@ -1,7 +1,5 @@
 package main
 
-import "DataStructureGolang/src/tree"
-
 func main() {
 	//src.ListInstance()
 	//src.DListNodeInstance()
@@ -9,5 +7,9 @@ func main() {
 	//stack.ListStackInstance()
 	//queue.InstanceQueue()
 	//tree.BinaryTreeNodeInstance()
-	tree.BinarySearchTreeInstance()
+	//tree.BinarySearchTreeInstance()
+
 }
+
+
+
