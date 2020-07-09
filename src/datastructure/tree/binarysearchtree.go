@@ -7,9 +7,9 @@ import (
 )
 
 type BinarySearchTreeNode struct {
-	Key int
+	Key   int
 	Value Item
-	Left *BinarySearchTreeNode
+	Left  *BinarySearchTreeNode
 	Right *BinarySearchTreeNode
 }
 
@@ -26,7 +26,7 @@ func (this *BinarySearchTree) Insert(key int, value Item) {
 	this.lock.Lock()
 	defer this.lock.Unlock()
 
-	newNode := &BinarySearchTreeNode{Key:   key, Value: value}
+	newNode := &BinarySearchTreeNode{Key: key, Value: value}
 	if this.root == nil {
 		this.root = newNode
 	} else {

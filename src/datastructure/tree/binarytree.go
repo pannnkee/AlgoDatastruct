@@ -7,7 +7,7 @@ type Item interface {}
 type BinaryTreeNode struct {
 	//Key int
 	Value Item
-	Left *BinaryTreeNode
+	Left  *BinaryTreeNode
 	Right *BinaryTreeNode
 }
 

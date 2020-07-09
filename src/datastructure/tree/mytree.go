@@ -6,9 +6,9 @@ import (
 )
 
 type MyTreeNode struct {
-	Key int
+	Key   int
 	Value Item
-	Left *MyTreeNode
+	Left  *MyTreeNode
 	Right *MyTreeNode
 }
 
