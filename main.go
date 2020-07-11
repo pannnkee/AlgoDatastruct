@@ -9,7 +9,7 @@ func main() {
 	//tree.BinaryTreeNodeInstance()
 	//tree.BinarySearchTreeInstance()
 	//tree.TestTreeNodIenstance()
-	
+
 }
 
 
