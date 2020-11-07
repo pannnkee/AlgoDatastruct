@@ -4,10 +4,10 @@ package algo
 //请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数
 func FindNumberIn2DArray(matrix [][]int, target int) bool {
 
-	var x,y int
+	var _, _ int
 	for i := 0; i < len(matrix); i++ {
 		if target >= matrix[i][len(matrix[i])] {
-			x = i
+			_ = i
 			break
 		}
 	}
