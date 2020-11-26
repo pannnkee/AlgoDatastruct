@@ -4,19 +4,18 @@ import "fmt"
 
 // 无重复字符的最长子串
 func TheLongestSubstringWithoutRepeatedCharacters() {
-	str := "abcabcbb"
+	s := "pwwkew"
 
 	maxLen := 0
-	strMap := make(map[byte]struct{}, 0)
-	for left, right := 0,0; right < len(str); {
-		if _, ok := strMap[str[right]]; ok {
-			delete(strMap, str[right])
+	mapStr := make(map[byte]struct{}, 0)
+	for left, right := 0,0; right<len(s); {
+		if _, ok := mapStr[s[right]]; ok {
+			delete(mapStr, s[left])
 			left++
 		} else {
-			strMap[str[right]] = struct{}{}
+			mapStr[s[right]] = struct{}{}
 			right++
 		}
-
 		if maxLen < right - left {
 			maxLen = right - left
 		}
